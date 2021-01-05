@@ -69,10 +69,10 @@ fun defineCanon(angle: Double, v0: Double, y0: Double, name: String) : Pair<Bool
 
   while(y >= 0.0) {
     grafico.ponto(x, y)
-    t += 0.5
+    t += 0.01
     x = vx * t
-    y = y0 + (v0y * t) - (5 * (t).toDouble().pow(2))
-    if(x in 74.0..76.0 && y >= 25.0) wallConfirmation = true
+    y = y0 + (v0y * t) - (5 * (t).pow(2))
+    if(x in 75.0..76.0 && y >= 25.0) wallConfirmation = true
     if(y >= 0.0) maxDistance = x
   }
 
