@@ -39,8 +39,9 @@ fun restart() {
 
 fun defineHeight() : Double {
   println("Introduza a altura inicial.")
-  return when(val height = readLine()?.toDoubleOrNull()) {
-    null -> {
+  val height = readLine()?.toDoubleOrNull()
+  return when {
+    height == null || height < 0 -> {
       println("Altura inválida.")
       defineHeight()
     }
@@ -51,7 +52,7 @@ fun defineHeight() : Double {
 }
 
 fun defineCanon(angle: Double, v0: Double, y0: Double, name: String) : Pair<Boolean, Double> {
-  println("Gráfico do canhão $name")
+  println("\nGráfico do canhão $name")
 
   val larguraGrafico = 80
   val alturaGrafico = 25
